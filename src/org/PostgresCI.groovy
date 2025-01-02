@@ -19,7 +19,6 @@ class PostgresCI {
                     steps {
                         sh '''
                         ansible-playbook -i /opt/aws_ec2.yaml playbook.yml --private-key=/home/ubuntu/key-pair.pem --syntax-check
-                        ansible-playbook -i /opt/aws_ec2.yaml playbook.yml --private-key=/home/ubuntu/key-pair.pem
                         '''
                     }
                 }
