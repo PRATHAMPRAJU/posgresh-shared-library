@@ -3,7 +3,7 @@ package org
 class PostgresCI {
     static void runPipeline(pipelineContext) {
         pipelineContext.pipeline {
-            agent { label 'any' } // Use proper syntax for agent
+            agent any // Correct use of the agent directive
             stages {
                 stage('Clone Repository') {
                     steps {
