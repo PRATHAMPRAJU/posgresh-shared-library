@@ -2,7 +2,7 @@ package org
 
 class PostgresCI {
     static void runPipeline(pipelineContext) {
-        pipeline {
+        pipelineContext.pipeline {
             agent any
             stages {
                 stage('Clone Repository') {
