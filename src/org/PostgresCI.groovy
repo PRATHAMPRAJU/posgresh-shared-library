@@ -3,7 +3,7 @@ package org
 class PostgresCI {
     static void runPipeline(pipelineContext) {
         pipelineContext.pipeline {
-            agent any
+            agent { label 'any' } // Use proper syntax for agent
             stages {
                 stage('Clone Repository') {
                     steps {
@@ -18,7 +18,7 @@ class PostgresCI {
                 stage('Test Role') {
                     steps {
                         sh '''
-                        ansible-playbook -i aws_ec2.yaml playbook.yml --private-key=key-pair.pem --syntax-check
+                        ansible-playbook -i aws_ec2.yaml playbook.yml --private-key=/home/ubuntu/key-pair.pem --syntax-check
                         '''
                     }
                 }
