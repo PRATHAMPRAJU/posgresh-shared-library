@@ -18,7 +18,7 @@ class PostgresCI {
                 stage('Test Role') {
                     steps {
                         sh '''
-                        ansible-playbook -i aws_ec2.yaml playbook.yml --private-key=/home/ubuntu/key-pair.pem --syntax-check
+                        ansible-playbook -i aws_ec2.yaml playbook.yml --syntax-check
                         '''
                     }
                 }
